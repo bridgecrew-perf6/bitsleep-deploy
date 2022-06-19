@@ -8,7 +8,7 @@ WORKDIR /root/bitsleep-demo-frontend
 
 RUN sh script/build.sh
 
-FROM kiesun/kieq_build:latest AS back_builder
+FROM golang:latest AS back_builder
 
 WORKDIR /root
 
