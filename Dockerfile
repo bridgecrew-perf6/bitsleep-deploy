@@ -28,6 +28,8 @@ COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 
 COPY --from=back_builder /root/bitsleep-demo-backend/demo /root
 
+COPY --from=back_builder /root/bitsleep-demo-backend/media /root
+
 WORKDIR /root/
 
 CMD /root/demo& /bin/bash -c "envsubst '\$PORT:\$BACKEND_PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
