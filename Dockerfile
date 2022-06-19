@@ -28,7 +28,7 @@ COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 
 COPY --from=back_builder /root/bitsleep-demo-backend/demo /root
 
-COPY --from=back_builder /root/bitsleep-demo-backend/media /root
+COPY --from=back_builder /root/bitsleep-demo-backend/media/ /root/media/
 
 WORKDIR /root/
 
